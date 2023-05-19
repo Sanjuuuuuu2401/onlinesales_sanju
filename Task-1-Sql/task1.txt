@@ -1,0 +1,6 @@
+select d.name as DEPT_NAME,avg(s.amt_used) as AVG_MONTHLY_SALARY 
+from departments d
+join employees e on d.id = e.dept_id
+join salaries s on e.id = s.emp_id
+group by d.id,d.name
+order by AVG_MONTHLY_SALARY desc limit 3;
